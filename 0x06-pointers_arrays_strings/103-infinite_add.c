@@ -5,11 +5,11 @@
  * @n: integer params
  * Return: 0
  */
-void rev_string(Char *n)
+void rev_string(char *n)
 {
 	int i = 0;
 	int j = 0;
-	int temp;
+	char temp;
 
 	while (*(n + 1) != '\0')
 	{
@@ -56,17 +56,17 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			val2 = 0;
 		else
 			val2 = *(n2 + j) - '0';
-		tempt_tot = val1 + val2 + overflow;
+		temp_tot = val1 + val2 + overflow;
 		if (temp_tot >= 10)
 			overflow = 1;
 		else
 			overflow = 0;
 		if (digits >= (size_r - 1))
 			return (0);
-		*(r + digits) = (temp_to % 10) + '0';
+		*(r + digits) = (temp_tot % 10) + '0';
 		digits++;
-		j++;
-		i++;
+		j--;
+		i--;
 	}
 	if (digits == size_r)
 		return (0);
